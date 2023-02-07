@@ -19,6 +19,7 @@
     <k-block-title>Footer</k-block-title>
     <k-list inset>
       <k-list-item href="/legal" title="Legal" />
+      <k-list-item href="/ideas" title="Visual Ideas" />
     </k-list>
   </k-page>
 </template>
