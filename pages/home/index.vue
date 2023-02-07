@@ -10,6 +10,7 @@
     </k-block>
     <k-block-title>Navigation</k-block-title>
     <k-list inset>
+      <k-list-item href="/user-messages" title="Messages" />
       <k-list-item href="/sites" title="Sites" />
       <k-list-item href="/assets" title="Assets" />
       <k-list-item href="/asset-issues" title="Asset Issues" />
