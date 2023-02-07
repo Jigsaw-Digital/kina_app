@@ -1,12 +1,12 @@
 <template>
   <k-page>
-    <k-navbar title="View Site"/>
+    <k-navbar title="View Asset"/>
     <k-toolbar navbar>
       <k-link toolbar @click="back">Back</k-link>
       <k-link toolbar @click="update">Update</k-link>
     </k-toolbar>
     <k-block strong inset>
-      <p>View Site Information</p>
+      <p>View Asset Information</p>
     </k-block>
     <k-list inset strong >
       <k-list strong-ios outline-ios>
@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     axios
-      .get(`https://cornerstone.test/api/resources/account-sites/` + this.$route.params.id + `/get`)
+      .get(`https://cornerstone.test/api/resources/assets/` + this.$route.params.id + `/get`)
       .then(response => (this.entry = response.data));
 
     this.loading = false;
@@ -65,11 +65,11 @@ export default {
   methods: {
     back(){
       const router = useRouter();
-      router.push(`/sites/`);
+      router.push(`/Assets/`);
     },
     update(){
       const router = useRouter();
-      router.push(`/sites/update/` + this.$route.params.id);
+      router.push(`/Assets/update/` + this.$route.params.id);
     }
   }
 };

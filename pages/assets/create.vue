@@ -1,11 +1,11 @@
 <template>
   <k-page>
-    <k-navbar title="Create Site"/>
+    <k-navbar title="Create Asset"/>
     <k-toolbar navbar>
       <k-link toolbar @click="back">Back</k-link>
     </k-toolbar>
     <k-block strong inset>
-      <p>Here is where you can create your site. A site is where all your assets/users can be assigned to keep
+      <p>Here is where you can create your Asset. A Asset is where all your assets/users can be assigned to keep
         everything organised.</p>
     </k-block>
     <k-list inset strong>
@@ -28,7 +28,7 @@
           Close
         </k-button>
       </template>
-      <div class="shrink">Site created successfully!</div>
+      <div class="shrink">Asset created successfully!</div>
     </k-toast>
   </k-page>
 </template>
@@ -86,7 +86,7 @@ export default {
   },
   mounted() {
     axios
-      .get('https://cornerstone.test/api/resources/account-sites/info')
+      .get('https://cornerstone.test/api/resources/assets/info')
       .then(response => (this.fields = response.data));
 
     this.loading = false;
@@ -94,7 +94,7 @@ export default {
   methods: {
     back(){
       const router = useRouter();
-      router.push(`/sites/`);
+      router.push(`/Assets/`);
     },
 
     updateValue(key, value) {
@@ -110,10 +110,10 @@ export default {
       }
 
       axios
-        .post('https://cornerstone.test/api/resources/account-sites/create', data)
+        .post('https://cornerstone.test/api/resources/assets/create', data)
         .then(response => (this.fields = response.data))
         // .then(response => (this.openToast('center')))
-        .then(response => ( router.push({ name: 'sites' })))
+        .then(response => ( router.push({ name: 'Assets' })))
     }
   }
 };

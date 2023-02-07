@@ -1,11 +1,11 @@
 <template>
   <k-page>
-    <k-navbar title="View Site"/>
+    <k-navbar title="View Asset"/>
     <k-toolbar navbar>
       <k-link toolbar @click="back">Back</k-link>
     </k-toolbar>
     <k-block strong inset>
-      <p>Edit Site Information</p>
+      <p>Edit Asset Information</p>
     </k-block>
     <k-list inset strong >
       <k-list strong-ios outline-ios>
@@ -29,7 +29,7 @@
           Close
         </k-button>
       </template>
-      <div class="shrink">Site updated successfully!</div>
+      <div class="shrink">Asset updated successfully!</div>
     </k-toast>
 
   </k-page>
@@ -94,13 +94,13 @@ export default {
     reload() {
       this.loading = true;
       axios
-        .get('https://cornerstone.test/api/resources/account-sites/info')
+        .get('https://cornerstone.test/api/resources/asset-issues/info')
         .then(response => (this.fields = response.data));
 
       this.loading = false;
 
       axios
-        .get(`https://cornerstone.test/api/resources/account-sites/` + this.$route.params.id + `/get`)
+        .get(`https://cornerstone.test/api/resources/asset-issues/` + this.$route.params.id + `/get`)
         .then(response => (this.entry = response.data));
 
       this.loading = false;
@@ -110,7 +110,7 @@ export default {
     },
     back(){
       const router = useRouter();
-      router.push(`/sites/` + this.$route.params.id);
+      router.push(`/asset-issues/` + this.$route.params.id);
     },
     update() {
       let data = {};
@@ -120,7 +120,7 @@ export default {
       }
 
       axios
-        .post(`https://cornerstone.test/api/resources/account-sites/`+ this.$route.params.id +`/update`, data)
+        .post(`https://cornerstone.test/api/resources/asset-issues/`+ this.$route.params.id +`/update`, data)
         .then(response => (this.fields = response.data))
         .then(response => ( this.openToast('center')))
         .then(response=> (this.reload()));

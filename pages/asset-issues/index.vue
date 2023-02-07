@@ -1,21 +1,21 @@
 <template>
   <k-page>
-    <k-navbar title="Sites" />
+    <k-navbar title="asset-issues" />
     <k-toolbar navbar>
       <k-link toolbar @click="back">Back</k-link>
     </k-toolbar>
     <k-block strong inset>
-      <p>Here is your sites assigned to your account.</p>
+      <p>Here is your asset-issues assigned to your account.</p>
     </k-block>
 
-    <k-block-title>Sites</k-block-title>
+    <k-block-title>asset-issues</k-block-title>
     <k-list inset>
-      <NuxtLink v-for="item in list"  :to="`/sites/` + item.id">
-        <k-list-item :title="item.value.address_line1 + ' ' + item.value.address_line2 + ' ' + item.value.address_post_code"></k-list-item>
+      <NuxtLink v-for="item in list"  :to="`/asset-issues/` + item.id">
+        <k-list-item :title="item.value.issue"></k-list-item>
       </NuxtLink>
     </k-list>
     <k-list inset class="mt-2">
-      <k-list-item href="/sites/create" title="Create Site" />
+      <k-list-item href="/asset-issues/create" title="Create Asset" />
     </k-list>
   </k-page>
 </template>
@@ -49,7 +49,7 @@ export default {
     kBlockTitle,
     kToolbar,
   },
-  fetchKey: 'site-create',
+  fetchKey: 'Asset-create',
   data () {
     return {
       list: null
@@ -57,7 +57,7 @@ export default {
   },
   mounted () {
     axios
-      .get('https://cornerstone.test/api/resources/account-sites/get')
+      .get('https://cornerstone.test/api/resources/asset-issues/get')
       .then(response => (this.list = response.data))
   },
   methods: {

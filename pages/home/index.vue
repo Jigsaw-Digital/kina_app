@@ -11,6 +11,13 @@
     <k-block-title>Navigation</k-block-title>
     <k-list inset>
       <k-list-item href="/sites" title="Sites" />
+      <k-list-item href="/assets" title="Assets" />
+      <k-list-item href="/asset-issues" title="Asset Issues" />
+    </k-list>
+
+    <k-block-title>Footer</k-block-title>
+    <k-list inset>
+      <k-list-item href="/legal" title="Legal" />
     </k-list>
   </k-page>
 </template>
