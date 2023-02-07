@@ -169,6 +169,7 @@ import {
   kListItem,
   kLink,
   kButton,
+  kToolbar
 } from 'konsta/vue';
 
 
@@ -183,6 +184,7 @@ export default {
     kListItem,
     kLink,
     kButton,
+    kToolbar,
   },
   methods: {
     back(){
