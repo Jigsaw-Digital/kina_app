@@ -6,7 +6,7 @@
       <k-link toolbar @click="notifications">Notifications</k-link>
     </k-toolbar>
     <k-block strong inset>
-      <p>Here is your Nuxt & Konsta UI app. Let's see what we have here.</p>
+      <p>Welcome to Kina</p>
     </k-block>
     <k-block-title>Navigation</k-block-title>
     <k-list inset>
