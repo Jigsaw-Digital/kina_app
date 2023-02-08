@@ -14,6 +14,7 @@
       <k-list-item href="/sites" title="Sites" />
       <k-list-item href="/assets" title="Assets" />
       <k-list-item href="/asset-issues" title="Asset Issues" />
+      <k-list-item href="/asset-addons" title="Asset Addons" />
     </k-list>
 
     <k-block-title>Footer</k-block-title>
