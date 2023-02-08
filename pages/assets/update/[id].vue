@@ -94,13 +94,13 @@ export default {
     reload() {
       this.loading = true;
       axios
-        .get('https://cornerstone.test/api/resources/assets/info')
+        .get('https://kinda.jdsx.app/api/resources/assets/info')
         .then(response => (this.fields = response.data));
 
       this.loading = false;
 
       axios
-        .get(`https://cornerstone.test/api/resources/assets/` + this.$route.params.id + `/get`)
+        .get(`https://kinda.jdsx.app/api/resources/assets/` + this.$route.params.id + `/get`)
         .then(response => (this.entry = response.data));
 
       this.loading = false;
@@ -120,7 +120,7 @@ export default {
       }
 
       axios
-        .post(`https://cornerstone.test/api/resources/assets/`+ this.$route.params.id +`/update`, data)
+        .post(`https://kinda.jdsx.app/api/resources/assets/`+ this.$route.params.id +`/update`, data)
         .then(response => (this.fields = response.data))
         .then(response => ( this.openToast('center')))
         .then(response=> (this.reload()));

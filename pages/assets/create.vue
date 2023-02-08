@@ -86,7 +86,7 @@ export default {
   },
   mounted() {
     axios
-      .get('https://cornerstone.test/api/resources/assets/info')
+      .get('https://kinda.jdsx.app/api/resources/assets/info')
       .then(response => (this.fields = response.data));
 
     this.loading = false;
@@ -110,7 +110,7 @@ export default {
       }
 
       axios
-        .post('https://cornerstone.test/api/resources/assets/create', data)
+        .post('https://kinda.jdsx.app/api/resources/assets/create', data)
         .then(response => (this.fields = response.data))
         // .then(response => (this.openToast('center')))
         .then(response => ( router.push({ name: 'Assets' })))

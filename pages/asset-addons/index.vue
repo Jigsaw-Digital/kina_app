@@ -57,7 +57,7 @@ export default {
   },
   mounted () {
     axios
-      .get('https://cornerstone.test/api/resources/asset-addons/get')
+      .get('https://kinda.jdsx.app/api/resources/asset-addons/get')
       .then(response => (this.list = response.data))
   },
   methods: {

@@ -57,7 +57,7 @@ export default {
   },
   mounted () {
     axios
-      .get('https://cornerstone.test/api/resources/user-messages/get')
+      .get('https://kinda.jdsx.app/api/resources/user-messages/get')
       .then(response => (this.list = response.data))
   },
   methods: {

@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     axios
-      .get(`https://cornerstone.test/api/resources/user-messages/` + this.$route.params.id + `/get`)
+      .get(`https://kinda.jdsx.app/api/resources/user-messages/` + this.$route.params.id + `/get`)
       .then(response => (this.entry = response.data));
 
     this.loading = false;
