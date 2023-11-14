@@ -1,25 +1,31 @@
 <template>
-  <k-page>
-    <k-navbar title="Create Asset"/>
+
+  <div class="bg-white">
     <k-toolbar navbar>
       <k-link toolbar @click="back">Back</k-link>
     </k-toolbar>
-    <k-block strong inset>
-      <p>Here is where you can create your Asset. A Asset is where all your assets/users can be assigned to keep
-        everything organised.</p>
-    </k-block>
     <k-list inset strong>
       <div v-if="!loading" v-for="(key, field) in fields">
-        <k-list-input v-if="key.type === 'select'" :label="key.name" type="select" dropdown :placeholder="key.name" @input="updateValue(key.property, $event.target.value)" required>
-          <option value=""></option>
-          <option v-for="option in key.options" :value="option">{{option}}</option>
-        </k-list-input>
-        <k-list-input v-if="key.type != 'select'" :label="key.name" type="text" :placeholder="key.name" @input="updateValue(key.property, $event.target.value)" required/>
-      </div>
+        <div class="w-full pb-2 pt-3 px-8 block" v-if="key.type != 'select'">
+          <div class="py-2 px-2">
+            <label class="text-[#EA5E65] ">{{ key.name }}</label>
+            <input type="text" @input="updateValue(key.property, $event.target.value)" required
+                   class="block border rounded-full border-[#e5e5e5] w-full py-2 px-5 mt-2"/>
+          </div>
+        </div>
+        <div class="w-full pb-2 pt-3 px-8 block" v-else>
+          <label class="text-[#EA5E65] ">{{ key.name }}</label>
+          <select  type="select"  @input="updateValue(key.property, $event.target.value)" required   class="block border rounded-full border-[#e5e5e5] w-full py-2 px-5 mt-2">
+            <option value=""></option>
+            <option v-for="option in key.options" :value="option">{{option}}</option>
+          </select>
+        </div>
+        </div>
 
-      <div class="mx-2 my-2">
-        <k-button v-on:click="create">Create</k-button>
-      </div>
+
+        <a href="#"
+           class="block border border-1 border-[#EA5E65] bg-[#EA5E65] text-white rounded-full mx-auto text-center py-2 px-5 mt-2"
+           v-on:click="create()">Create</a>
     </k-list>
 
     <k-toast position="center" :opened="opened.center">
@@ -30,7 +36,7 @@
       </template>
       <div class="shrink">Asset created successfully!</div>
     </k-toast>
-  </k-page>
+  </div>
 </template>
 <script>
 // Konsta UI components
